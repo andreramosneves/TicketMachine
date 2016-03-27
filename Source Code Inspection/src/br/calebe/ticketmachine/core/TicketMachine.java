@@ -10,9 +10,9 @@ import java.util.Iterator;
  */
 public class TicketMachine {
 
-    protected int valor;
-    protected int saldo;
-    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
+    private int valor;
+    private int saldo;
+    private int[] papelMoeda = {2, 5, 10, 20, 50, 100};
 
     public TicketMachine(int valor) {
         this.valor = valor;
@@ -44,11 +44,21 @@ public class TicketMachine {
     }
 
     public String imprimir() throws SaldoInsuficienteException {
+        int troco = 0;
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
         }
+        
+        
+        if (saldo > valor){
+            Iterator<Integer> i = getTroco();
+            while (i.hasNext()) {
+                troco = i.next() + troco;
+            }
+        }
         String result = "*****************\n";
         result += "*** R$ " + saldo + ",00 ****\n";
+        result += "*** R$ " + troco + ",00 ****\n";
         result += "*****************\n";
         return result;
     }
