@@ -49,7 +49,6 @@ class Troco {
     }
 
     class TrocoIterator implements Iterator<PapelMoeda> {
-
         private Troco troco;
 
         public TrocoIterator(Troco troco) {
@@ -72,7 +71,7 @@ class Troco {
 
         @Override
         public void remove() {
-            next();
+            troco.getIterator().remove();
         }
     }
 }
