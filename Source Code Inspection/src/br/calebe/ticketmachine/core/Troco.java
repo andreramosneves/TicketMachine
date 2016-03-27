@@ -3,14 +3,12 @@ package br.calebe.ticketmachine.core;
 import java.util.Iterator;
 
 /**
- * aaa
  * @author Calebe de Paula Bianchini
  */
 class Troco {
+
     private PapelMoeda[] papeisMoeda;
 
-    
-    
     public PapelMoeda[] getPapeisMoeda() {
         return papeisMoeda;
     }
@@ -19,8 +17,6 @@ class Troco {
         this.papeisMoeda = papeisMoeda;
     }
 
-    
-    
     public Troco(int valor) {
         papeisMoeda = new PapelMoeda[6];
         int count = 0;
@@ -60,6 +56,7 @@ class Troco {
     }
 
     class TrocoIterator implements Iterator<PapelMoeda> {
+
         private Troco troco;
 
         public TrocoIterator(Troco troco) {
@@ -73,7 +70,7 @@ class Troco {
 
         @Override
         public PapelMoeda next() {
-            while (troco.getIterator().hasNext()){
+            while (troco.getIterator().hasNext()) {
                 PapelMoeda ret = troco.getIterator().next();
                 return ret;
             }
