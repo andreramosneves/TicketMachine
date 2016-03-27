@@ -58,7 +58,13 @@ public class TicketMachine {
         }
         if (saldo > valor){
             troco = getTroco();
+            saldo=0;
         }
+        if(saldo == valor){
+                     
+            saldo=0;
+        }
+        
         String result = "*****************\n";
         result += "*** R$ " + saldo + ",00 ****\n";
         result += "*** R$ " + troco + ",00 ****\n";
