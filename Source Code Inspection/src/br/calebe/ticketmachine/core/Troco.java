@@ -58,24 +58,16 @@ class Troco {
 
         @Override
         public boolean hasNext() {
-            for (int i = 6; i >= 0; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    return true;
-                }
-            }
-            return false;
+            return troco.getIterator().hasNext();
         }
 
         @Override
         public PapelMoeda next() {
-            PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    ret = troco.papeisMoeda[i];
-                    troco.papeisMoeda[i] = null;
-                }
+            while (troco.getIterator().hasNext()){
+                PapelMoeda ret = troco.getIterator().next();
+                return ret;
             }
-            return ret;
+            return null;
         }
 
         @Override
