@@ -9,6 +9,18 @@ import java.util.Iterator;
 class Troco {
     private PapelMoeda[] papeisMoeda;
 
+    
+    
+    public PapelMoeda[] getPapeisMoeda() {
+        return papeisMoeda;
+    }
+
+    public void setPapeisMoeda(PapelMoeda[] papeisMoeda) {
+        this.papeisMoeda = papeisMoeda;
+    }
+
+    
+    
     public Troco(int valor) {
         papeisMoeda = new PapelMoeda[6];
         int count = 0;
