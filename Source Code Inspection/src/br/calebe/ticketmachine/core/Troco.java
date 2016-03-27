@@ -3,7 +3,7 @@ package br.calebe.ticketmachine.core;
 import java.util.Iterator;
 
 /**
- * 
+ * aaa
  * @author Calebe de Paula Bianchini
  */
 class Troco {
