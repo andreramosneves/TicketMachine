@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 /**
  *
+ * Alterei
  * @author Calebe de Paula Bianchini
  */
 public class TicketMachine {
